@@ -1,0 +1,15 @@
+apply plugin: 'java'
+project(':tiebaobeidaogenerator') {
+    apply plugin: 'application'
+    apply plugin: 'java'
+    mainClassName = "com.tiebaobei.generator.TieBaoBeiDaoGenerator"
+    dependencies {
+        compile fileTree(dir: 'libs', include: ['*.jar'])
+    }
+}
+dependencies {
+    compile 'org.greenrobot:greendao-generator:2.2.0'
+}
+tasks.withType(JavaCompile) {
+    options.encoding = "UTF-8"
+}
